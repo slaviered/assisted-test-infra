@@ -213,7 +213,7 @@ class InventoryClient(object):
         response = self.client.download_cluster_logs(
             cluster_id=cluster_id, _preload_content=False
         )
-        with open(output_file, "wb") as _file:
+        with open(output_file, "w+b") as _file:
             _file.write(response.data)
 
     def get_events(self, cluster_id):
